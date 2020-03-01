@@ -44,9 +44,10 @@ for word in input_words:
 
 # to execute - python3 stemmer-file.py > stem.txt
 
+# INPUT test.txt
+'writing', 'calves', 'be', 'branded', 'horse', 'randomize', 'possibly', 'provision', 'hospital', 'kept', 'scratchy', 'code'
 
-# OUTPUT IS GIVEN BELOW
-stem.txt
+# OUTPUT stem.txt
 
 
 
