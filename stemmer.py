@@ -40,3 +40,23 @@ for word in input_words:
 
 
 # to execute - python3 stemmer.py
+# OUTPUT IS 
+$python3 stemmer.py 
+
+       INPUT WORD          PORTER       LANCASTER        SNOWBALL 
+ ====================================================================
+         writing           write            writ           write
+          calves            calv            calv            calv
+              be              be              be              be
+         branded           brand           brand           brand
+           horse            hors            hors            hors
+       randomize          random          random          random
+        possibly         possibl            poss         possibl
+       provision          provis          provid          provis
+        hospital          hospit          hospit          hospit
+            kept            kept            kept            kept
+        scratchy        scratchi        scratchy        scratchi
+            code            code             cod            code
+
+
+
