@@ -15,28 +15,22 @@ from nltk.stem.porter import PorterStemmer
 from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem.snowball import SnowballStemmer
 
-# Define some input words:
-#input_words = ['writing', 'calves', 'be', 'branded', 'horse', 'randomize', 'possibly', 'provision', 'hospital', 'kept', 'scratchy', 'code']
 
-fhand = open("words.txt","r")
-words = []
-for line in fhand:
-	 if line.strip() != ' ':
-                words.extend(line.strip().split())
-print(words)
-
+#Its a List of all words in your file.
+import re
+with open('test.txt') as file:
+    words = re.findall(r"([a-zA-Z\-]+)", file.read())
 
 # Create objects for Porter, Lancaster, and Snowball stemmers:
-# Create various stemmer objects
 porter = PorterStemmer()
 lancaster = LancasterStemmer()
 snowball = SnowballStemmer('english')
 
-# Create a list of names for table display and format the output text accordingly:
-#Create a list of stemmer names for display
+# Create a list of stemmer names for table display and format the output text accordingly:
 stemmer_names = ['PORTER', 'LANCASTER', 'SNOWBALL']
 formatted_text = '{:>16}' * (len(stemmer_names) + 1)
-print('\n', formatted_text.format('INPUT WORD', *stemmer_names), '\n', '='*68)
+print('\n', formatted_text.format('INPUT WORD', *stemmer_names),
+'\n', '='*68)
 
 #Iterate through the words and stem them using the three stemmers:
 # Stem each word and display the output
@@ -45,15 +39,30 @@ for word in words:
 	print(formatted_text.format(*output))
 
 
-fhand.close()
 
-   # word.txt
-'writing', 'calves', 'be', 
-'branded', 'horse', 'randomize', 'possibly', 
-'provision', 'hospital', 'kept', 
-'scratchy', 'code'
+# to execute - python3 stemmer-file.py
+Output:
 
-             
-               
-               
+
+       INPUT WORD          PORTER       LANCASTER        SNOWBALL 
+ ====================================================================
+         writing           write            writ           write
+          calves            calv            calv            calv
+              be              be              be              be
+         branded           brand           brand           brand
+           horse            hors            hors            hors
+       randomize          random          random          random
+        possibly         possibl            poss         possibl
+       provision          provis          provid          provis
+        hospital          hospit          hospit          hospit
+            kept            kept            kept            kept
+        scratchy        scratchi        scratchy        scratchi
+            code            code             cod            code
+
+
+
+
+
+
+
 
